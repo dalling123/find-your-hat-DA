@@ -98,13 +98,17 @@ class Field {
     };
     // Make sure the "hat" is not at the starting point
     while (hatLocation.x === 0 && hatLocation.y === 0) {
-      hatLocation.x = Math.floor(Math.random() * width);
+      hatLocation.x = Math.floor(Math.random() * width) + 0; // added zero for git test
       hatLocation.y = Math.floor(Math.random() * height);
     }
     field[hatLocation.y][hatLocation.x] = hat;
     return field;
   }
 }
+
+console.log("Are you ready to play??");
+console.log('*************************');
+console.log('*************************');
 
 const myfield = new Field(Field.generateField(10, 10, 0.2));
 myfield.runGame();
